@@ -1,0 +1,15 @@
+<div class="container">
+  <% @users.each do |users| %>
+    <div class="user-profile-index-body">
+      <div class="user-profile-index-left">
+        <img src="<%= "/user_images/#{users.user_profile.image}"%>">
+      </div>
+      <div class="user-profile-index-right">
+        <p><%= "#{users.user_profile.name}" %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="text-center">
+    <%= paginate @users %>
+  </div>
+</div>
