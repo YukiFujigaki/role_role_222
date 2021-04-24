@@ -1,0 +1,2 @@
+class RoleModel < ApplicationRecord
+end
