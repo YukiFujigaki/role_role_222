@@ -29,11 +29,11 @@ class RoleModelsController < ApplicationController
   end
 
   def edit
-    @role_model = RoleModelRecord.find(params[:id])
+    @role_model = RoleModel.find(params[:id])
   end
 
   def update
-    role_model = RoleModelRecord.find(params[:id])
+    role_model = RoleModel.find(params[:id])
 
     if role_model.update(title: params[:title],
                          description: params[:description],
