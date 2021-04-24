@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="role_models-index-header">
+    ロールモデルの投稿
+  </div>
+  <div class="role_models-body-show">
+    <div class="role_models-background">
+      <img src="<%= "/user_background_images/#{@role_model.user.user_profile.background_image}" %>">
+    </div>
+    <div class="role_models_user-image">
+      <img src="<%= "/user_images/#{@role_model.user.user_profile.image}" %>">
+    </div>
+    <div class="role_models-title-top">
+      <%= @role_model.title %>
+    </div>
+    <%= link_to('編集する', "/role_models/#{@role_model.id}/edit") if @role_model.user.id == @current_user.id %>
+    <div class="role_models-title">
+      どのような生活、行動をしていますか？
+    </div>
+    <div class="role_models-contents">
+      <%= simple_format(@role_model.description) %>
+    </div>
+    <div class="role_models-title">
+      このロールモデルの良い点
+    </div>
+    <div class="role_models-contents">
+      <%= @role_model.good_point %>
+    </div>
+    <div class="role_models-title">
+      このロールモデルの悪い点
+    </div>
+    <div class="role_models-contents">
+      <%= @role_model.bad_point %>
+    </div>
+    <div class="role_models-title">
+      あなたの様になるにはどうしたら良いですか？
+    </div>
+    <div class="role_models-contents">
+      <%= simple_format(@role_model.approach) %>
+    </div>
+  </div>
+</div>

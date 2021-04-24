@@ -8,6 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+require('jquery');
+require('jquery-ui');
+require('tag-it.min');
+require('jquery-ui/ui/widgets/autocomplete');
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

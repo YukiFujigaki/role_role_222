@@ -1,0 +1,34 @@
+<div class="top-main">
+  <div class="top-message">
+    <h1>ROLE MODEL</h1>
+    <p>ROLE MODELを共有しよう！</p>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="search_box">
+      <%= form_tag('/home/search') do%>
+        <input type="text" name="name" size="25" placeholder="ロールモデルを探す">
+        <input type="submit" value="&#xf002">
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="top-role_models-container">
+  <% @role_models.each do |role_model| %>
+    <div class="top-role_models-body">
+      <div class="top-role_models-background">
+        <img src="<%= "/user_background_images/#{role_model.user.user_profile.background_image}" %>">
+      </div>
+      <div class="top-role_models_user-image">
+        <img src="<%= "/user_images/#{role_model.user.user_profile.image}" %>">
+      </div>
+      <div class="top-role_models-header">
+        <h1><%= link_to("#{role_model.title}", "/role_models/#{role_model.id}") %></h1>
+      </div>
+      <div class="top-role_models-introduction">
+        <%= link_to("#{role_model.description.truncate(150, omission: ' ...続きを読む')}", "/role_models/#{role_model.id}") %>
+      </div>
+    </div>
+  <% end %>
+  <div class="text-center">
+    <%= paginate @role_models %>
+  </div>
+</div>

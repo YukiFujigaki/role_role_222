@@ -1,0 +1,163 @@
+// Place all the styles related to the Homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+header {
+  height: 64px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'Slabo 27px', serif;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 20px;
+  color: #333333;
+  font-size: 22px;
+  line-height: 64px;
+}
+
+.header-logo a {
+  color: #333333;
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-menu {
+  float: right;
+  padding-right: 20px;
+  color: #333333;
+}
+
+.header-menu li {
+  float: left;
+  font-size: 13px;
+  color: #333333;
+  padding-left: 15px;
+  list-style: none;
+}
+
+.header-menu li a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header-menu a {
+  float: left;
+  font-size: 13px;
+  color: #333333;
+  font-weight: 600;
+}
+
+.top-main {
+  padding: 100px 0 100px;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  height: 330px;
+  margin: 0px;
+  color: #000000;
+  background-color: #F0F4F4;
+  background-image: url('/top_city.png');
+}
+
+.top-message {
+  height: 100px;
+  font-family: 'Slabo 27px', serif;
+}
+
+.top-role_models-container {
+  width: 960px;
+  margin: 50px auto;
+}
+
+.top-role_models-body {
+  max-width: 280px;
+  height: 400px;
+  display: inline-block;
+  margin: 0px 18px 30px;
+  text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+}
+
+.top-role_models-background img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px 8px 0px 0px;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.top-role_models_user-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: solid 4px #fff;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+.top-role_models-header {
+  margin: 5px 30px;
+  text-align: center;
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+.top-role_models-introduction {
+  margin: 5px 15px;
+  text-align: left;
+}
+
+// Topの検索ボックス
+.search_box {
+  left: 35%;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 30%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.search_box input[type="text"]{
+  border: none;
+  height: 2.0em;
+  text-align: left;
+}
+.search_box input[type="text"]:focus {
+  outline: 0;
+}
+.search_box input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: #3879D9;
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  right: 0;
+  top: -10px;
+  outline : none;
+}
