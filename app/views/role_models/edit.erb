@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="form-body">
+    <div class="role_models-index-header">
+      ロールモデルの編集
+    </div>
+    <div class="form-content">
+      <%= form_with(url: "/role_models/#{@role_model.id}/update", method: :patch) do %>
+        <div class="role_models-input-field">
+          <%= label_tag(:title, 'ロールモデル') %>
+          <%= text_field_tag(:title, @role_model.title)%>
+        </div>
+        <div class="role_models-input-field">
+          <%= label_tag(:tag, 'タグ') %>
+          <%= text_field_tag(:tag, @role_model.tags.map(&:name)) %>
+        </div>
+        <div class="role_models-input-field">
+          <%= label_tag(:description, 'ロールモデルの説明') %>
+          <%= text_field_tag(:description, @role_model.description) %>
+        </div>
+        <div class="role_models-input-field">
+          <%= label_tag(:good_point, 'このロールモデルの良い点') %>
+          <%= text_field_tag(:good_point, @role_model.good_point) %>
+        </div>
+        <div class="role_models-input-field">
+          <%= label_tag(:bad_point, 'このロールモデルの悪い点') %>
+          <%= text_field_tag(:bad_point, @role_model.bad_point) %>
+        </div>
+        <div class="role_models-input-field">
+          <%= label_tag(:approach, 'このロールモデルを実践するには') %>
+          <%= text_field_tag(:approach, @role_model.approach) %>
+        </div>
+        <%= submit_tag('更新') %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+    $(window).on('load', function() {
+        tags = $('#tag').val().split(' ');
+        $('#tag').val(tags)
+        console.log(tags);
+        $('#tag').tagit({
+            singleField: true,
+            availableTags: tags
+        });
+        console.log($('#tag').val());
+
+        $(document).ready(
+            function() {
+                $.ajax({url: '/tags/autocomplete_tag/all_tags', dataType: 'json', type: 'GET'}).done(
+                    function(data) {
+                        $('#tag').tagit({
+                            singleField: true,
+                            availableTags: data
+                        });
+                    });
+            }
+        );
+    });
+</script>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="role_models-index-header">
+    ロールモデル
+  </div>
+  <% @role_models.each do |role_model| %>
+    <div class="role_models-body">
+      <div class="role_models-background">
+        <img src="<%= "/user_background_images/#{role_model.user.user_profile.background_image}" %>">
+      </div>
+      <div class="role_models_user-image">
+        <img src="<%= "/user_images/#{role_model.user.user_profile.image}" %>">
+      </div>
+      <%= link_to("#{role_model.user.user_profile.name}", "/user_profiles/#{role_model.user.id}") %>
+      <div class="role_models-header">
+        <h1><%= link_to("#{role_model.title}", "/role_models/#{role_model.id}") %></h1>
+      </div>
+      <div class="role_models-introduction">
+        <%= link_to("#{role_model.description.truncate(150, omission: ' ...続きを読む')}", "/role_models/#{role_model.id}") %>
+      </div>
+    </div>
+  <% end %>
+  <div class="text-center">
+    <%= paginate @role_models %>
+  </div>
+</div>
