@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="user-profile-body">
+    <div class="user-profile-background">
+      <img src="<%= "/user_background_images/#{@user_profile.background_image}"%>">
+    </div>
+    <div class="user-profile-image">
+      <img src="<%= "/user_images/#{@user_profile.image}"%>">
+    </div>
+    <%= "#{@user_profile.name}さんのプロフィール" %>
+    <%= link_to('編集', "/user_profiles/#{@user_profile.id}/edit") if @user_profile.user_id == @current_user.id %>
+    <div class="user-profile-introduction">
+      <%= simple_format(@user_profile.introduction) %>
+    </div>
+  </div>
+</div>

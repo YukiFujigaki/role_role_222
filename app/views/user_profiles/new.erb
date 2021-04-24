@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="form-body">
+    <div class="form-header">
+      プロフィール作成
+    </div>
+    <div class="form-content">
+      <%= form_with(url: "/user_profiles/#{current_user.id}/create", method: :post, multipart: true) do %>
+        <p>名前</p>
+        <%= text_field(:profile, :name)%>
+        <p>自己紹介</p>
+        <%= text_area(:profile, :introduction) %>
+        <p>プロフィール画像</p>
+        <%= file_field(:profile, :image)%>
+        <p>背景画像</p>
+        <%= file_field(:profile, :background_image)%>
+        <p></p>
+
+        <%= button_tag('作成') %>
+      <% end %>
+    </div>
+  </div>
+</div>
