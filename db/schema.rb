@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_090206) do
+ActiveRecord::Schema.define(version: 2021_04_24_094805) do
+
+  create_table "user_profiles", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "introduction"
+    t.string "image"
+    t.string "background_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
