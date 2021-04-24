@@ -12,4 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery.tagit
  */
+.pagination {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pagination>li>a {
+    border: none;
+    color: #696969;
+}
+
+.pagination>.active>a {
+    background: #93c9ff;
+}

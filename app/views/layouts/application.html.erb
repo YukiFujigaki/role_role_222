@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RoleRole222</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Thinker</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="header-logo">
+      <%= link_to('ROLE MODEL', '/') %>
+    </div>
+    <ul class="header-menu">
+      <% if @current_user %>
+        <li><%= link_to "#{@current_user.user_profile.name}さん", pages_show_path %></li>
+        <li><%= link_to 'プロフィール変更', "/user_profiles/#{@current_user.user_profile.id}/edit" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
 
-  <body>
-    <header>
-      <nav>
-        <% if user_signed_in? %>
-          <strong><%= link_to @current_user.id, pages_show_path %></strong>
-          <%= link_to 'プロフィール変更', edit_user_registration_path %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'サインアップ', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
-        <% end %>
-      </nav>
-    </header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-  </body>
+<%= yield %>
+</body>
 </html>
