@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
-  database: role_role_222_production
-  username: role_role_222
-  password: <%= ENV['ROLE_ROLE_222_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  database: <%= ENV['DB_DATABASE'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
