@@ -76,10 +76,11 @@ header {
 }
 
 .top-role_models-body {
-  max-width: 280px;
+  width: 280px;
   height: 400px;
   display: inline-block;
-  margin: 0px 18px 30px;
+  margin: 18px;
+  vertical-align: middle;
   text-align: center;
   background-color: #FFFFFF;
   border-radius: 8px;
@@ -140,9 +141,10 @@ header {
   background-color: #ffffff;
 }
 .search_box input[type="text"]{
-  border: none;
+  width: 90%;
   height: 2.0em;
   text-align: left;
+  border: none;
 }
 .search_box input[type="text"]:focus {
   outline: 0;
