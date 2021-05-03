@@ -44,6 +44,8 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'pry-rails'
+  gem "rspec_junit_formatter"
+  gem 'rubocop'
 end
 
 group :development do
