@@ -11,17 +11,25 @@ class UserProfilesController < ApplicationController
   end
 
   def create
+    @notice = []
     @user_plofile = UserProfile.new(user_id: current_user.id,
                                     name: params[:profile][:name],
                                     introduction: params[:profile][:introduction],
-                                    image: user_profile_image,
-                                    background_image: user_profile_background_image
     )
+
+    user_profile_image if params[:profile][:image]
+    user_profile_background_image if params[:profile][:background_image]
+
+    if @notice.present?
+      flash[:notice] = @notice
+      return redirect_to "/user_profiles/#{@current_user.id}/new"
+    end
+
     if @user_plofile.save
       flash[:notice] = '作成しました。'
       redirect_to("/user_profiles/#{@current_user.id}")
     else
-      flash[:notice] = '作成出来ませんでした。もう一度プロフィールを作成して下さい。'
+      flash[:notice] = '作成出来ませんでした。もう一度作成して下さい。'
       redirect_to("/user_profiles/#{@current_user.id}/new")
     end
   end
@@ -31,18 +39,25 @@ class UserProfilesController < ApplicationController
   end
 
   def update
+    @notice = []
     @user_plofile = user_profile
     @user_plofile.name = params[:profile][:name]
     @user_plofile.introduction = params[:profile][:introduction]
-    @user_plofile.image = user_profile_image if params[:profile][:image]
-    @user_plofile.background_image = user_profile_background_image if params[:profile][:background_image]
+
+    user_profile_image if params[:profile][:image]
+    user_profile_background_image if params[:profile][:background_image]
+
+    if @notice.present?
+      flash[:notice] = @notice
+      return redirect_to "/user_profiles/#{@current_user.id}/edit"
+    end
 
     if @user_plofile.save
       flash[:notice] = '保存しました。'
       redirect_to("/user_profiles/#{@current_user.id}")
     else
-      flash[:notice] = '保存出来ませんでした。もう一度プロフィールを作成して下さい。'
-      redirect_to "/role_models/#{@current_user.id}/edit"
+      flash[:notice] = '保存出来ませんでした。もう一度保存して下さい。'
+      redirect_to "/user_profiles/#{@current_user.id}/edit"
     end
   end
 
@@ -54,25 +69,19 @@ class UserProfilesController < ApplicationController
     return unless params[:profile][:image]
 
     if params[:profile][:image].size > 2.megabyte
-      flash[:notice] = '画像サイズは2MBまでです。'
-      render('user_profiles/new')
+      @notice << 'プロフィール画像のサイズは2MBまでです。'
     else
-      File.binwrite("public/user_images/#{current_user.id}.jpg", params[:profile][:image].read)
+      @user_plofile.image = params[:profile][:image]
     end
-
-    return "#{current_user.id}.jpg"
   end
 
   private def user_profile_background_image
     return unless params[:profile][:background_image]
 
     if params[:profile][:background_image].size > 2.megabyte
-      flash[:notice] = '画像サイズは2MBまでです。'
-      render('user_profiles/new')
+      @notice << '背景画像のサイズは2MBまでです。'
     else
-      File.binwrite("public/user_background_images/#{current_user.id}.jpg", params[:profile][:background_image].read)
+      @user_plofile.background_image = params[:profile][:background_image]
     end
-
-    return "#{current_user.id}.jpg"
   end
 end

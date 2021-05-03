@@ -5,10 +5,10 @@
   <% @role_models.each do |role_model| %>
     <div class="role_models-body">
       <div class="role_models-background">
-        <img src="<%= "/user_background_images/#{role_model.user.user_profile.background_image}" %>">
+        <img src="<%= "#{role_model.user.user_profile.background_image}" %>">
       </div>
       <div class="role_models_user-image">
-        <img src="<%= "/user_images/#{role_model.user.user_profile.image}" %>">
+        <img src="<%= "#{role_model.user.user_profile.image}" %>">
       </div>
       <%= link_to("#{role_model.user.user_profile.name}", "/user_profiles/#{role_model.user.id}") %>
       <div class="role_models-header">
