@@ -46,4 +46,9 @@ class RoleModelsController < ApplicationController
 
     redirect_to "/role_models/#{params[:id]}"
   end
+
+  def search
+    @role_models = RoleModel.where('title LIKE ?', "%#{params[:title]}%").order(created_at: :desc).page(params[:page]).per(10)
+    render('/role_models/index')
+  end
 end

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/role_models/:id', to: 'role_models#show'
   get '/role_models/:id/edit', to: 'role_models#edit'
   patch '/role_models/:id/update', to: 'role_models#update'
+  post '/role_models/search', to: 'role_models#search'
 
   get '/tags/autocomplete_tag/all_tags', to: 'tags#all_tags'
   get '/tags/autocomplete_tag/:tag', to: 'tags#autocomplete_tag'
