@@ -4,8 +4,8 @@
     <p>ROLE MODELを共有しよう！</p>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="search_box">
-      <%= form_tag('/home/search') do%>
-        <input type="text" name="name" size="25" placeholder="ロールモデルを探す">
+      <%= form_tag('/role_models/search') do%>
+        <input type="text" name="title" size="25" placeholder="ロールモデルを探す">
         <input type="submit" value="&#xf002">
       <% end %>
     </div>
