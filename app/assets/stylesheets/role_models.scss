@@ -54,7 +54,7 @@
 }
 
 .role_models-title-top {
-  margin: 10px 10px 30px;
+  margin: 10px 10px 10px;
   font-size: 40px;
   text-align: center;
   font-weight: 800;
@@ -76,14 +76,14 @@
 }
 
 .role_models-title {
-  margin: 10px;
+  margin: 20px;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 
 .role_models-contents {
-  padding: 0px 50px 20px;
+  padding: 0px 20px 20px;
   font-size: 20px;
   text-align: left;
 }
@@ -125,4 +125,37 @@
   right: 0;
   top: -10px;
   outline : none;
+}
+
+.badge-group{
+  margin: 10px 40px 40px;
+  width: 580px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.badge-item{
+  margin-top: 10px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background: #4B96F5;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+  padding: 8px 10px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.badge-icon{
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 8px 10px;
+  overflow: hidden;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
