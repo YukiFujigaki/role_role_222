@@ -35,7 +35,7 @@ gem 'omniauth', '1.9.1'
 gem 'kaminari'
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', require: 'fog/aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
