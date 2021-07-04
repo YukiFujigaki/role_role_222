@@ -56,3 +56,19 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 1c:cf:9a:bc:bb:53:90:75:fd:56:54:4f:19:2f:11:8b
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/rails/role_role_222/deploy-me.sh"
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
