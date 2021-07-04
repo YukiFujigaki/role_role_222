@@ -18,9 +18,9 @@
       <%= link_to('ROLE MODEL', '/') %>
     </div>
     <ul class="header-menu">
-      <% if @current_user %>
-        <li><%= link_to "#{@current_user.user_profile.name}さん", pages_show_path %></li>
-        <li><%= link_to 'プロフィール変更', "/user_profiles/#{@current_user.user_profile.id}/edit" %></li>
+      <% if @current_user.id != 0 %>
+        <li><%= link_to "#{@current_user.name}さん", pages_show_path %></li>
+        <li><%= link_to 'プロフィール変更', "/user_profiles/#{@current_user.id}/edit" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to 'サインアップ', new_user_registration_path %></li>

@@ -12,7 +12,7 @@ class UserProfilesController < ApplicationController
 
   def create
     @notice = []
-    @user_plofile = UserProfile.new(user_id: current_user.id,
+    @user_plofile = UserProfile.new(user_id: @current_user.id,
                                     name: params[:profile][:name],
                                     introduction: params[:profile][:introduction],
     )
