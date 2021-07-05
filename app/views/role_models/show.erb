@@ -1,10 +1,10 @@
 <div class="container">
   <div class="role_models-body-show">
     <div class="role_models-background">
-      <img src="<%= @role_model&.user&.user_profile&.background_image&.file&.file.nil? ? '/default_user_background_image.png' : "#{@role_model&.user&.user_profile.background_image}"%>">
+      <img src="<%= @role_model&.user&.user_profile&.background_image&.file&.url.nil? ? '/default_user_background_image.png' : "#{@role_model&.user&.user_profile.background_image}"%>">
     </div>
     <div class="role_models_user-image">
-      <img src="<%= @role_model&.user&.user_profile&.image&.file&.file.nil? ? '/default_user_image.png' : "#{@role_model&.user&.user_profile.image}"%>">
+      <img src="<%= @role_model&.user&.user_profile&.image&.file&.url.nil? ? '/default_user_image.png' : "#{@role_model&.user&.user_profile.image}"%>">
     </div>
     <div class="role_models-title-top">
       <%= @role_model.title %>
