@@ -2,7 +2,7 @@
   <% @users.each do |users| %>
     <div class="user-profile-index-body">
       <div class="user-profile-index-left">
-        <img src="<%= users&.user_profile&.image&.file&.file.nil? ? '/default_user_image.png' : "#{users.user_profile.image}"%>">
+        <img src="<%= users&.user_profile&.image&.file&.url.nil? ? '/default_user_image.png' : "#{users.user_profile.image}"%>">
       </div>
       <div class="user-profile-index-right">
         <p><%= "#{users&.user_profile&.name}" %></p>

@@ -15,10 +15,10 @@
   <% @role_models.each do |role_model| %>
     <div class="top-role_models-body">
       <div class="top-role_models-background">
-        <img src="<%= role_model&.user&.user_profile&.background_image&.file&.file.nil? ? '/default_user_background_image.png' : "#{role_model&.user&.user_profile.background_image}"%>">
+        <img src="<%= role_model&.user&.user_profile&.background_image&.file.nil? ? '/default_user_background_image.png' : "#{role_model&.user&.user_profile.background_image}"%>">
       </div>
       <div class="top-role_models_user-image">
-        <img src="<%= role_model&.user&.user_profile&.image&.file&.file.nil? ? '/default_user_image.png' : "#{role_model&.user&.user_profile.image}"%>">
+        <img src="<%= role_model&.user&.user_profile&.image&.file.nil? ? '/default_user_image.png' : "#{role_model&.user&.user_profile.image}"%>">
       </div>
       <div class="top-role_models-header">
         <h1><%= link_to("#{role_model.title}", "/role_models/#{role_model.id}") %></h1>
