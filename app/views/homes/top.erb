@@ -1,7 +1,7 @@
 <div class="top-main">
   <div class="top-message">
-    <h1>ROLE MODEL</h1>
-    <p>ROLE MODELを共有しよう！</p>
+    <h1>ROLE ROLE</h1>
+    <p>自分の生き方を見つけよう！</p>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="search_box">
       <%= form_tag('/role_models/search') do%>
@@ -30,5 +30,25 @@
   <% end %>
   <div class="text-center">
     <%= paginate @role_models %>
+  </div>
+</div>
+<div class="description-container">
+  <div class="description">
+    <h1>Role Roleとは</h1>
+    <p>ロールモデル。つまり、人生の先輩を探すサービスです。</p>
+    <h1>「将来どんな人になって、どう生きていけばいいの？」</h1>
+    <div class="image-container">
+      <img src="/cannnotdecide_man_simple.png">
+    </div>
+    <h3>人生の先輩を探して繋がってみませんか？</h3>
+    <h3>自分に合った生き方が見つかるかもしれません。</h3>
+    <br>
+    <h1>あなたも誰かのロールモデルになれる</h1>
+    <div class="role_model-image-container">
+      <img src="/collegestudent_simple.png">
+    </div>
+    <h3>自分の生き方って他人から見ると「こんな生き方があったのか」と思う事があります。</h3>
+    <h3>あなたの事を少しだけ話してみませんか？</h3>
+    <%= link_to "ロールモデルになる！", "/role_models/new", class: 'btn-square' %>
   </div>
 </div>

@@ -64,7 +64,7 @@ header {
   background-color: #F0F4F4;
   object-fit: cover;
   background: linear-gradient( 135deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8)), url('/top_city.png');
-  background-position: center 75%;
+  background-position: center 80%;
   background-size: cover;
 }
 
@@ -166,4 +166,56 @@ header {
   right: 0;
   top: -10px;
   outline : none;
+}
+
+.description-container {
+  background-color: #F8F8FF;
+  padding: 20px;
+}
+
+.description {
+  width: 960px;
+  margin: 50px auto;
+  color: #444444;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+}
+
+.image-container {
+  padding: 0 50px;
+}
+
+.image-container img {
+  width: 152px;
+  height: 250px;
+}
+.role_model-image-container {
+  padding: 0 50px;
+}
+
+.role_model-image-container img{
+  width: 238px;
+  height: 258px;
+}
+
+.btn-square {
+  margin: 30px 50px;
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #FFA500;
+  color: #FFF;
+  border-bottom: solid 4px #FF9900;
+  border-radius: 3px;
+}
+.btn-square:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.btn-square:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
 }
