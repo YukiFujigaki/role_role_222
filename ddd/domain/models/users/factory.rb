@@ -7,10 +7,10 @@ module Users
         Users::User.new(
           id: user.id,
           email: user.email,
-          name: user.user_profile.name,
-          image: user.user_profile.image,
-          introduction: user.user_profile.introduction,
-          background_image: user.user_profile.background_image
+          name: user&.user_profile&.name || "ユーザーID #{user.id}",
+          image: user&.user_profile&.image || '/default_user_image.png',
+          introduction: user&.user_profile&.introduction || '',
+          background_image: user&.user_profile&.background_image || '/default_user_background_image.png'
         )
       end
 
