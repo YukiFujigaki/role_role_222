@@ -12,10 +12,10 @@
   <% @role_models.each do |role_model| %>
     <div class="role_models-body">
       <div class="role_models-background">
-        <img src="<%= role_model&.user&.user_profile&.background_image&.file&.url.nil? ? '/default_user_background_image.png' : "#{role_model&.user&.user_profile.background_image}"%>">
+        <img src="<%= role_model&.user&.user_profile&.background_image&.file.nil? ? '/default_user_background_image.png' : "#{role_model&.user&.user_profile.background_image}"%>">
       </div>
       <div class="role_models_user-image">
-        <img src="<%= role_model&.user&.user_profile&.image&.file&.url.nil? ? '/default_user_image.png' : "#{role_model&.user&.user_profile.image}"%>">
+        <img src="<%= role_model&.user&.user_profile&.image&.file.nil? ? '/default_user_image.png' : "#{role_model&.user&.user_profile.image}"%>">
       </div>
       <%= link_to("#{role_model.user&.user_profile&.name}", "/user_profiles/#{role_model.user.id}") %>
       <div class="role_models-header">
