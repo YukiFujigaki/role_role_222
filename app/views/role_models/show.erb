@@ -1,45 +1,47 @@
 <div class="container">
-  <div class="role_models-body-show">
-    <div class="role_models-background">
-      <img src="<%= @role_model&.user&.user_profile&.background_image&.file&.url.nil? ? '/default_user_background_image.png' : "#{@role_model&.user&.user_profile.background_image}"%>">
-    </div>
-    <div class="role_models_user-image">
-      <img src="<%= @role_model&.user&.user_profile&.image&.file&.url.nil? ? '/default_user_image.png' : "#{@role_model&.user&.user_profile.image}"%>">
-    </div>
-    <div class="role_models-title-top">
-      <%= @role_model.title %>
-    </div>
-    <%= link_to('編集する', "/role_models/#{@role_model.id}/edit") if @role_model.user.id == current_user.id %>
-    <div class="badge-group">
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <div class="badge-icon"><i class="fa fa-tags"></i></div>
-      <% @role_model.tags.each do |tag| %>
-        <div class="badge-item"><%= tag.name %></div>
-      <% end %>
-    </div>
-    <div class="role_models-title">
-      どのような活動をしていますか？
-    </div>
-    <div class="role_models-contents">
-      <%= simple_format(@role_model.description) %>
-    </div>
-    <div class="role_models-title">
-      この活動について良いと感じる点
-    </div>
-    <div class="role_models-contents">
-      <%= @role_model.good_point %>
-    </div>
-    <div class="role_models-title">
-      この活動について悪いと感じる点
-    </div>
-    <div class="role_models-contents">
-      <%= @role_model.bad_point %>
-    </div>
-    <div class="role_models-title">
-      どうしたらあなたの様になれますか？
-    </div>
-    <div class="role_models-contents">
-      <%= simple_format(@role_model.approach) %>
+  <div class="role_models-body-2">
+    <div class="role_models-body-show">
+      <div class="role_models-background">
+        <img src="<%= @role_model&.user&.user_profile&.background_image&.file.nil? ? '/default_user_background_image.png' : "#{@role_model&.user&.user_profile.background_image}"%>">
+      </div>
+      <div class="role_models_user-image">
+        <img src="<%= @role_model&.user&.user_profile&.image&.file.nil? ? '/default_user_image.png' : "#{@role_model&.user&.user_profile.image}"%>">
+      </div>
+      <div class="role_models-title-top">
+        <%= @role_model.title %>
+      </div>
+      <%= link_to('編集する', "/role_models/#{@role_model.id}/edit") if @role_model.user.id == current_user.id %>
+      <div class="badge-group">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="badge-icon"><i class="fa fa-tags"></i></div>
+        <% @role_model.tags.each do |tag| %>
+          <div class="badge-item"><%= tag.name %></div>
+        <% end %>
+      </div>
+      <div class="role_models-title">
+        どのような活動をしていますか？
+      </div>
+      <div class="role_models-contents">
+        <%= simple_format(@role_model.description) %>
+      </div>
+      <div class="role_models-title">
+        この活動について良いと感じる点
+      </div>
+      <div class="role_models-contents">
+        <%= @role_model.good_point %>
+      </div>
+      <div class="role_models-title">
+        この活動について悪いと感じる点
+      </div>
+      <div class="role_models-contents">
+        <%= @role_model.bad_point %>
+      </div>
+      <div class="role_models-title">
+        どうしたらあなたの様になれますか？
+      </div>
+      <div class="role_models-contents">
+        <%= simple_format(@role_model.approach) %>
+      </div>
     </div>
   </div>
 </div>

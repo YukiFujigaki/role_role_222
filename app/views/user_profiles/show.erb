@@ -1,10 +1,10 @@
 <div class="container">
   <div class="user-profile-body">
     <div class="user-profile-background">
-      <img src="<%= @user_profile.background_image&.file&.url.nil? ? '/default_user_background_image.png' : "#{@user_profile.background_image}"%>">
+      <img src="<%= @user_profile.background_image&.file.nil? ? '/default_user_background_image.png' : "#{@user_profile.background_image}"%>">
     </div>
     <div class="user-profile-image">
-      <img src="<%= @user_profile.image&.file&.url.nil? ? '/default_user_image.png' : "#{@user_profile.image}"%>">
+      <img src="<%= @user_profile.image&.file.nil? ? '/default_user_image.png' : "#{@user_profile.image}"%>">
     </div>
     <%= "#{@user_profile&.name}さんのプロフィール" %>
     <%= link_to('編集', "/user_profiles/#{@user_profile.id}/edit") if @user_profile&.user_id == current_user.id %>
